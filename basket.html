@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Charansparsh</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="demo-styles.css" />
+    <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
+    <script src="https://unpkg.com/focus-visible/dist/focus-visible.js" defer></script>
+    <script src="utils.js"></script>
+    </head>
+  <body>
+    <img class="header_logo" src="logo.png"></img>
+    <div id="card">
+     <model-viewer src="basket.glb" ar ar-modes= "scene-viewer quick-look" camera-controls tone-mapping="neutral"  poster ="basket.webp" shadow-intensity="1">
+      
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+    </model-viewer>
+    </div>
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    
+ </body>
+</html>
+
+  
+
+<style>
+    model-viewer {
+        width: 100%;
+        height: 400px;
+    }
+
+    /* This keeps child nodes hidden while the element loads */
+    :not(:defined)>* {
+        display: none;
+    }
+
+    #ar-button {
+          background-image: url(ar_icon.png);
+          background-repeat: no-repeat;
+          background-size: 20px 20px;
+          background-position: 12px 50%;
+          background-color: #fff;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          white-space: nowrap;
+          bottom: 16px;
+          padding: 0px 16px 0px 40px;
+          font-family: Roboto Regular, Helvetica Neue, sans-serif;
+          font-size: 14px;
+          color:#4285f4;
+          height: 36px;
+          line-height: 36px;
+          border-radius: 18px;
+          border: 1px solid #DADCE0;
+        }
+
+    #ar-button:active {
+        background-color: #E8EAED;
+      }
+      
+      #ar-button:focus {
+        outline: none;
+      }
+      
+      #ar-button:focus-visible {
+        outline: 1px solid #4285f4;
+      }
+
+    @keyframes circle {
+        from {
+            transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
+        }
+
+        to {
+            transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg);
+        }
+    }
+
+    @keyframes elongate {
+        from {
+            transform: translateX(100px);
+        }
+
+        to {
+            transform: translateX(-100px);
+        }
+    }
+
+    model-viewer>#ar-prompt {
+        position: absolute;
+        left: 50%;
+        bottom: 75px;
+        animation: elongate 2s infinite ease-in-out alternate;
+        display: none;
+    }
+
+    model-viewer[ar-status="session-started"]>#ar-prompt {
+        display: block;
+    }
+
+    model-viewer>#ar-prompt>img {
+        animation: circle 4s linear infinite;
+    }
+
+    #controls {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-family: Roboto Regular, Helvetica Neue, sans-serif;
+        font-size: 16px;
+        background-color: #fff8;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    select {
+        font-size: 16px;
+    }
+</style>

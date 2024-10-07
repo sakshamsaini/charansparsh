@@ -1,0 +1,193 @@
+body {
+  margin: 1em;
+  padding: 0;
+  font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
+  color: white;
+  background-color: #ffffff;
+}
+
+a:link {
+  color: #ffffff;
+}
+
+a:visited {
+  color: #ffffff;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+a:active {
+  color: #ffffff;
+}
+
+#ie11-message {
+  display: none;
+  background: #fff9a6;
+  padding: 20px;
+}
+
+#card {
+  position: relative;
+  margin: 3em auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+model-viewer {
+  width: 100%;
+  height: 400px;
+  background-color: #ffffff;
+}
+
+#controls {
+  position: absolute;
+  top: 344px;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+#controls button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.2rem;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 5px;
+  pointer-events: auto;
+}
+
+#controls button:disabled,
+#controls button[disabled]{
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.attribution h1 {
+  margin: 0 0 0.25em;
+}
+
+.attribution img {
+  opacity: 0.5;
+  height: 2em;
+}
+
+.attribution .cc {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+#soundfx {
+  visibility: hidden;
+}
+
+footer {
+/*   display: flex;
+  flex-direction: column; */
+  max-width: 600px;
+  margin: auto;
+  padding: 0 0 1rem 0;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5em;
+}
+
+#description {
+  padding: 0 0 1rem 0;
+}
+
+#description h2 {
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.header_logo{
+  display: block;
+  margin: auto;
+  height: 50px;
+}
+.Hotspot {
+  background: #fff;
+  border-radius: 32px;
+  border: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 24px;
+  padding: 8px;
+  position: relative;
+  transition: opacity 0.3s;
+  width: 24px;
+}
+
+.Hotspot:not([data-visible]) {
+  background: transparent;
+  border: 4px solid #fff;
+  box-shadow: none;
+  height: 32px;
+  pointer-events: none;
+  width: 32px;
+}
+
+.Hotspot:focus {
+  border: 4px solid rgb(0, 128, 200);
+  height: 32px;
+  outline: none;
+  width: 32px;
+}
+
+.Hotspot > * {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.HotspotAnnotation{
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.8);
+  display: block;
+  font-family: Futura, Helvetica Neue, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  left: calc(100% + 1em);
+  max-width: 128px;
+  overflow-wrap: break-word;
+  padding: 0.5em 1em;
+  position: absolute;
+  top: 50%;
+  width: max-content;
+}
+
+.Hotspot:not([data-visible]) > * {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-50% + 4px));
+  transition: transform 0.3s, opacity 0.3s;
+}
+
